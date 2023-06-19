@@ -206,6 +206,6 @@
     "eslint": "^8.43.0",
     "mocha": "^8.3.2",
     "typescript": "^3.9.3",
-    "vscode-test": "^1.5.2"
+    "vscode-test": "^1.6.1"
   }
 }
