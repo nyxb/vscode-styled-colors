@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   glob-to-regexp:
     specifier: ^0.4.1
@@ -23,8 +19,8 @@ devDependencies:
     specifier: ^8.2.2
     version: 8.2.2
   '@types/node':
-    specifier: ^12.19.9
-    version: 12.19.9
+    specifier: ^20.3.1
+    version: 20.3.1
   '@types/vscode':
     specifier: ^1.54.0
     version: 1.54.0
@@ -332,6 +328,10 @@ packages:
 
   /@types/node@12.19.9:
     resolution: {integrity: sha512-yj0DOaQeUrk3nJ0bd3Y5PeDRJ6W0r+kilosLA+dzF3dola/o9hxhMSg2sFvVcA2UHS5JSOsZp4S0c1OEXc4m1Q==}
+    dev: true
+
+  /@types/node@20.3.1:
+    resolution: {integrity: sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
@@ -3536,3 +3536,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
