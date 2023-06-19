@@ -1,0 +1,21 @@
+{
+  "extends": ["@nyxb"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": 0,
+    "import/no-mutable-exports": 0,
+    "unicorn/prefer-node-protocol": 0,
+    "no-cond-assign": 0,
+    "no-unused-expressions": 0,
+    "max-statements-per-line": 0,
+    "no-sequences": 0,
+    "array-callback-return": 0,
+    "no-useless-call": 0,
+    "import/no-anonymous-default-export": 0,
+    "promise/param-names": 0
+  },
+  "settings": {
+    "react": {
+      "version": "18"
+    }
+  }
+}
