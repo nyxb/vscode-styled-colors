@@ -24,7 +24,7 @@
   "categories": [
     "Other"
   ],
-  "main": "./out/src/extension",
+  "main": "./dist/src/extension",
   "icon": "assets/logo.png",
   "engines": {
     "vscode": "^1.54.0"
@@ -41,6 +41,10 @@
       "properties": {
         "styled-colors.languages": {
           "default": [
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
             "css",
             "sass",
             "scss",
@@ -147,7 +151,7 @@
             "background",
             "underline"
           ],
-          "default": "background"
+          "default": "underline"
         },
         "styled-colors.colorized_colors": {
           "$schema": "http://json-schema.org/draft-07/schema#",
@@ -194,14 +198,12 @@
   "devDependencies": {
     "@nyxb/eslint-config": "^0.0.53",
     "@types/chai": "^4.2.17",
-    "@types/fs-extra": "^11.0.1",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^8.2.2",
     "@types/node": "^12.19.9",
     "@types/vscode": "^1.54.0",
     "chai": "^4.3.4",
     "eslint": "^8.43.0",
-    "fs-extra": "^11.1.1",
     "mocha": "^8.3.2",
     "typescript": "^3.9.3",
     "vscode-test": "^1.5.2"
