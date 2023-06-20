@@ -129,4 +129,4 @@ export default instance
 
 // What about stylus, postcss ???
 // should i always use the latest declaration in file?
-// vcode-styled-colors only colorize (does not validate code ¯\_(ツ)_/¯)
+// vcode-styled-colors only styled (does not validate code ¯\_(ツ)_/¯)

@@ -33,8 +33,8 @@ import Listeners from './listeners'
 let config: StyledColorsConfig = {
    languages: [],
    isHideCurrentLineDecorations: true,
-   colorizedVariables: [],
-   colorizedColors: [],
+   styledVariables: [],
+   styledColors: [],
    filesToExcludes: [],
    filesToIncludes: [],
    inferedFilesToInclude: [],
@@ -176,7 +176,7 @@ function isIncludedFile(fileName: string): boolean {
 }
 
 /**
- * Check if a file can be colorized by styled-colors
+ * Check if a file can be styled by styled-colors
  *
  * @param {TextDocument} document The document to test
  * @returns {boolean}
@@ -278,11 +278,11 @@ function handleConfigurationChanged() {
    const newConfig = getStyledColorsConfig()
    clearCache()
    // delete current decorations then regenerate decorations
-   ColorUtil.setupColorsExtractors(newConfig.colorizedColors)
+   ColorUtil.setupColorsExtractors(newConfig.styledColors)
 
    q.push(async (cb) => {
       // remove event listeners?
-      VariablesManager.setupVariablesExtractors(newConfig.colorizedVariables)
+      VariablesManager.setupVariablesExtractors(newConfig.styledVariables)
 
       if (newConfig.searchVariables)
          await VariablesManager.getWorkspaceVariables(newConfig.filesToIncludes.concat(newConfig.inferedFilesToInclude), newConfig.filesToExcludes) // 👍
@@ -290,7 +290,7 @@ function handleConfigurationChanged() {
       return cb()
    })
    config = newConfig
-   colorizeVisibleTextEditors()
+   styledVisibleTextEditors()
 }
 
 function initEventListeners(context: ExtensionContext) {
@@ -308,7 +308,7 @@ function getVisibleFileEditors(): TextEditor[] {
    return window.visibleTextEditors.filter(editor => editor.document.uri.scheme === 'file')
 }
 
-function colorizeVisibleTextEditors() {
+function styledVisibleTextEditors() {
    extension.nbLine = 65
    getVisibleFileEditors().forEach((editor) => {
       q.push(cb => styledColors(editor, cb))
@@ -320,8 +320,8 @@ let extension: StyledColorsContext
 export function activate(context: ExtensionContext): StyledColorsContext {
    extension = new StyledColorsContext()
    config = getStyledColorsConfig()
-   ColorUtil.setupColorsExtractors(config.colorizedColors)
-   VariablesManager.setupVariablesExtractors(config.colorizedVariables)
+   ColorUtil.setupColorsExtractors(config.styledColors)
+   VariablesManager.setupVariablesExtractors(config.styledVariables)
    q.push(async (cb) => {
       try {
          if (config.searchVariables)
@@ -334,7 +334,7 @@ export function activate(context: ExtensionContext): StyledColorsContext {
       }
       return cb()
    })
-   colorizeVisibleTextEditors()
+   styledVisibleTextEditors()
    return extension
 }
 

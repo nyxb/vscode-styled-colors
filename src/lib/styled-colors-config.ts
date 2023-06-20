@@ -9,8 +9,8 @@ const backgroundImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQC
 interface StyledColorsConfig {
    languages: string[]
    isHideCurrentLineDecorations: boolean
-   colorizedVariables: string[]
-   colorizedColors: string[]
+   styledVariables: string[]
+   styledColors: string[]
    filesToExcludes: string[]
    filesToIncludes: string[]
    inferedFilesToInclude: string[]
@@ -19,11 +19,11 @@ interface StyledColorsConfig {
 }
 
 function getStyledColorsConfig(): StyledColorsConfig {
-   const configuration: WorkspaceConfiguration = workspace.getConfiguration('colorize', window.activeTextEditor?.document)
+   const configuration: WorkspaceConfiguration = workspace.getConfiguration('styled-colors', window.activeTextEditor?.document)
 
    // remove duplicates (if duplicates)
-   const colorizedVariables = Array.from(new Set(configuration.get('colorized_variables', []))) // [...new Set(array)] // works too
-   const colorizedColors = Array.from(new Set(configuration.get('colorized_colors', []))) // [...new Set(array)] // works too
+   const styledVariables = Array.from(new Set(configuration.get('styled_variables', []))) // [...new Set(array)] // works too
+   const styledColors = Array.from(new Set(configuration.get('styled_colors', []))) // [...new Set(array)] // works too
 
    const languages = configuration.get('languages', [])
 
@@ -35,8 +35,8 @@ function getStyledColorsConfig(): StyledColorsConfig {
    return {
       languages,
       isHideCurrentLineDecorations: configuration.get('hide_current_line_decorations'),
-      colorizedColors,
-      colorizedVariables,
+      styledColors,
+      styledVariables,
       filesToIncludes,
       filesToExcludes,
       inferedFilesToInclude,

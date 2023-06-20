@@ -27,11 +27,13 @@
 
 The following Visual Studio Code settings are available for the Styled-Colors extension. These can be set in user preferences `(cmd+,)` or workspace settings `(.vscode/settings.json)`.
 
+
+
 ### 🗣 &nbsp; styled-colors.languages _ARRAY_
 
-Configure a list of languages that should be colorized. You can learn about languages at <https://code.visualstudio.com/docs/languages/overview>.
+Configure a list of languages that should be styled. You can learn more about languages at <https://code.visualstudio.com/docs/languages/overview>.
 
-For example, if you want to styled-colors colors in `python` files, you just need to include it:
+If you want to add more languages, for example, if you want styled-colors colors in `python` files, you just need to include it:
 
 ```json
   "styled-colors.languages": [
@@ -39,6 +41,9 @@ For example, if you want to styled-colors colors in `python` files, you just nee
     // ...
   ]
 ```
+
+>📝 Note: "Javascript", "Typescript", "Javascriptreact", and "Typescriptreact" are already included by default.
+
 
 ### 🔍 &nbsp; styled-colors.enable_search_variables _BOOLEAN_ _default: true_
 
@@ -56,7 +61,7 @@ Configure glob patterns for excluding files and folders. Styled-Colors will not 
 
 By default, decorations for the current line are hidden. Set this setting to `false` if you want to deactivate this behavior.
 
-### 🎨 &nbsp; styled-colors.colorized_colors _ARRAY_
+### 🎨 &nbsp; styled-colors.styled_colors _ARRAY_
 
 This options allow you to enable/disable colorization for a type of colors.
 
@@ -72,24 +77,24 @@ Available colors are :
 For example, if you want to only styled-colors hexa colors (`#fff, #ffffff, 0xFFF`) in your files you can update the option like this :
 
 ```json
-  "styled-colors.colorized_colors": [
+  "styled-colors.styled_colors": [
     "HEXA"
   ]
 ```
 
-### 🎨 &nbsp; styled-colors.colorized_variables
+### 🎨 &nbsp; styled-colors.styled_variables
 
 This options allow you to enable/disable colorization for a type of variables.
 
 For example if you use less in your project you setup the option like this
 
 ```json
-  "styled-colors.colorized_variables": [
+  "styled-colors.styled_variables": [
     "LESS"
   ]
 ```
 
-_This way all @variables will be colorized_
+_This way all @variables will be styled_
 
 
 ## 🤝💰 Sponsors
