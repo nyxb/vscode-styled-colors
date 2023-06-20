@@ -197,8 +197,8 @@
     "build:watch": "tsc -watch -p ./",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
+    "publish": "vsce publish",
+    "pack": "vsce package",
     "release": "nyxlx changelogen@latest --release && nyxr publish"
   },
   "dependencies": {
