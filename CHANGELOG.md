@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/nyxb/vscode-styled-colors/compare/v0.0.1...v0.0.4)
+
+
+### 🚀 Enhancements
+
+  - Add support for styled variables and colors 🐛 fix: change colorized to styled in config and code 📝 docs: update README.md to reflect the changes made in the code ([5b3d056](https://github.com/nyxb/vscode-styled-colors/commit/5b3d056))
+
+### 🏡 Chore
+
+  - **release:** V0.0.2 ([b8bb311](https://github.com/nyxb/vscode-styled-colors/commit/b8bb311))
+  - **release:** V0.0.3 ([d6dc1d1](https://github.com/nyxb/vscode-styled-colors/commit/d6dc1d1))
+  - **package.json): remove --no-dependencies flag from vsce publish and vsce package scripts 🆕 feat(vscode-styled-colors-0.0.3.vsix:** Add new file to the project directory. ([c50ac6e](https://github.com/nyxb/vscode-styled-colors/commit/c50ac6e))
+
+### 🎨 Styles
+
+  - **package.json:** Change galleryBanner theme from dark to light to improve visibility and accessibility ([f492891](https://github.com/nyxb/vscode-styled-colors/commit/f492891))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.0.3
 
 [compare changes](https://github.com/nyxb/vscode-styled-colors/compare/v0.0.2...v0.0.3)

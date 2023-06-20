@@ -2,7 +2,7 @@
   "publisher": "nyxb",
   "name": "vscode-styled-colors",
   "displayName": "styled-colors",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A vscode extension to help visualize css colors in files.",
   "license": "MIT",
   "homepage": "https://github.com/nyxb/vscode-styled-colors/blob/master/README.MD",
