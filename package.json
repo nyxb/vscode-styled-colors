@@ -2,9 +2,9 @@
   "publisher": "nyxb",
   "name": "vscode-styled-colors",
   "displayName": "styled-colors",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A vscode extension to help visualize css colors in files.",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "homepage": "https://github.com/nyxb/vscode-styled-colors/blob/master/README.MD",
   "repository": {
     "type": "git",
@@ -64,7 +64,7 @@
           ],
           "title": "styled-colors files with these languages",
           "type": "array",
-          "markdownDescription": "Configure a list of languages that should be colorized. A list of languages can be find at https://code.visualstudio.com/docs/languages/identifiers. You can learn about languages at https://code.visualstudio.com/docs/languages/overview."
+          "markdownDescription": "Configure a list of languages that should be styled. A list of languages can be find at https://code.visualstudio.com/docs/languages/identifiers. You can learn about languages at https://code.visualstudio.com/docs/languages/overview."
         },
         "styled-colors.include": {
           "type": "array",
@@ -95,7 +95,7 @@
         },
         "styled-colors.exclude": {
           "type": "array",
-          "markdownDescription": "Configure glob patterns for excluding files and folders. styled-colors will not colorized colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).",
+          "markdownDescription": "Configure glob patterns for excluding files and folders. styled-colors will not styled colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).",
           "default": [
             "**/.git",
             "**/.svn",
@@ -132,7 +132,7 @@
           "type": "boolean",
           "markdownDescription": "Hide colors for the current line. Set to `false` to turn it off"
         },
-        "styled-colors.colorized_variables": {
+        "styled-colors.styled_variables": {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "default": [
             "CSS"
@@ -149,7 +149,7 @@
           },
           "title": "Extract these type of variables",
           "type": "array",
-          "markdownDescription": "You can specified the type of variables that should be colorized by the extension."
+          "markdownDescription": "You can specified the type of variables that should be styled by the extension."
         },
         "styled-colors.decoration_type": {
           "title": "Type of decoration",
@@ -160,7 +160,7 @@
           ],
           "default": "underline"
         },
-        "styled-colors.colorized_colors": {
+        "styled-colors.styled_colors": {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "default": [
             "BROWSERS_COLORS",
@@ -181,13 +181,13 @@
           },
           "title": "styled-colors these type of color",
           "type": "array",
-          "markdownDescription": "You can specified the type of color that should be colorized by the extension.\nAvailable colors are:\n* `HEXA`: for hexadecimal colors: `#RGB`, `#RGBA`, `#RRGGBB`, `#RRGGBBAA`, `0xRGB`, `0xRGBA`, `0xRRGGBB` or `0xRRGGBBAA`\n* `ARGB`: for argb colors: `#RGB`, `#ARGB`, `#RRGGBB` or `#AARRGGBB`\n* `RGB`: for rgb colors: `rgb(r,g,b)` or `rgba(r,g,b,a)`\n* `HSL`: for HSL colors: `hsl(h,s,l)` or `hsla(h,s,l,a)`\n* `BROWSERS_COLORS`: for native browser's colors like `white`, `red`, `blue`..."
+          "markdownDescription": "You can specified the type of color that should be styled by the extension.\nAvailable colors are:\n* `HEXA`: for hexadecimal colors: `#RGB`, `#RGBA`, `#RRGGBB`, `#RRGGBBAA`, `0xRGB`, `0xRGBA`, `0xRRGGBB` or `0xRRGGBBAA`\n* `ARGB`: for argb colors: `#RGB`, `#ARGB`, `#RRGGBB` or `#AARRGGBB`\n* `RGB`: for rgb colors: `rgb(r,g,b)` or `rgba(r,g,b,a)`\n* `HSL`: for HSL colors: `hsl(h,s,l)` or `hsla(h,s,l,a)`\n* `BROWSERS_COLORS`: for native browser's colors like `white`, `red`, `blue`..."
         },
         "styled-colors.enable_search_variables": {
           "title": "Enable the search for variables at opening time",
           "default": true,
           "type": "boolean",
-          "markdownDescription": "When vscode starts, styled-colors fetch all files targeted by the settings `styled-colors.include` and `styled-colors.languages` but not the ones targeted by the setting `styled-colors.exclude`. When the fetch is done, styled-colors open and parse all files searching for variables. That way variables will be colorized in every files. _⚠️ this setting can slown down your editor a little at opening time, read this [issue](https://github.com/nyxb/vscode-styled-colors/issues/174) to learn more about it._"
+          "markdownDescription": "When vscode starts, styled-colors fetch all files targeted by the settings `styled-colors.include` and `styled-colors.languages` but not the ones targeted by the setting `styled-colors.exclude`. When the fetch is done, styled-colors open and parse all files searching for variables. That way variables will be styled in every files. _⚠️ this setting can slown down your editor a little at opening time, read this [issue](https://github.com/nyxb/vscode-styled-colors/issues/174) to learn more about it._"
         }
       }
     }
@@ -197,7 +197,6 @@
     "build:watch": "tsc -watch -p ./",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "npm run vscode:prepublish; node ./out/test/runTest.js",
     "publish": "vsce publish --no-dependencies",
     "pack": "vsce package --no-dependencies",
     "release": "nyxlx changelogen@latest --release && nyxr publish"
