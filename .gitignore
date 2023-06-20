@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out
-
+vscode-styled-colors-0.0.0.vsix
 # dependencies
 /node_modules
 /bower_components
