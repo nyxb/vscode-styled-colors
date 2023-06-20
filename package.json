@@ -14,6 +14,13 @@
     "url": "https://github.com/nyxb/vscode-styled-colors/issues"
   },
   "keywords": [
+    "styled-components",
+    "styled-jsx",
+    "css-in-js",
+    "css-in-jsx",
+    "css-in-ts",
+    "css-in-tsx",
+    "styled",
     "color",
     "css",
     "hexa",
@@ -25,7 +32,7 @@
     "Other"
   ],
   "main": "./dist/src/extension",
-  "icon": "assets/logo.png",
+  "icon": "res/logo.png",
   "engines": {
     "vscode": "^1.54.0"
   },
@@ -187,10 +194,13 @@
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
+    "build:watch": "tsc -watch -p ./",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "npm run vscode:prepublish; node ./out/test/runTest.js"
+    "test": "npm run vscode:prepublish; node ./out/test/runTest.js",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "release": "nyxlx changelogen@latest --release && nyxr publish"
   },
   "dependencies": {
     "glob-to-regexp": "^0.4.1"

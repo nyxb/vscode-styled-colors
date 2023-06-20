@@ -1,112 +1,105 @@
-# styled-colors
+# 💅 &nbsp; Styled-Colors
 
-Instantly visualize css colors in your css/sass/less/postcss/stylus/XML... files.
+<p align="center">
+<a href="https://marketplace.visualstudio.com/items?itemName=nyxb.styled-colors" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/nyxb.styled-colors.svg?style=flat&colorA=18181B&colorB=14F195&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+</p>
 
-This extension  your styles files looking for colors and generate a colored background (using the color) for each of them.
+> Effortlessly visualize CSS colors in your JavaScript, TypeScript, and other source files. This extension is designed to work excellently with styled-components, dynamically generating a colored underline for your color specifications. The underline can be customized to appear as a background color through settings.
 
-![](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo.gif)
+## 🌈 &nbsp; Key Features
 
-![](https://raw.githubusercontent.com/kamikillerto/vscode-colorize/master/assets/demo_variables.gif)
+- 🖥️ &nbsp; Support for source files like JavaScript and TypeScript.
+- 💅 &nbsp; Ideal for working with styled-components.
+- 👵👶 &nbsp; Support for both modern and legacy CSS color syntax. This includes:
+  - 🌈 &nbsp; RGB: `rgb(0, 0, 0)`, `rgb(0 0 0)`, `rgba(12, 122, 231, 0.2)`, `rgb(12 122 231 / 0.2)`
+  - 🌐 HSL: `hsl(.75turn, 60%, 70%)`, `hsla(270, 60%, 50%, 15%)`, `hsl(270 60% 50% / 15%)`, `hsl(.75turn 60% 70%)`
+- 🖍️ &nbsp; Display of colors is done through an underline by default but can be set to background through settings.
+- 🔄 &nbsp; Live color background updates.
+- 🌎 &nbsp; Comprehensive color support, including:
+  - 🎨 &nbsp; CSS variables
+  - 📦 &nbsp; Preprocessor variables
+  - 🌍 &nbsp; Cross-browser colors (e.g., _red, blue, green..._)
+  - 🔢 &nbsp; CSS hexadecimal color
+  - 💡 &nbsp; RGB/RGBA color
+  - 🅰️ &nbsp; ARGB color
 
-💡 [How to enable variables support](#colorizecolorized_variables)
+## ⚙️ &nbsp; Options (settings)
 
-## Features
+The following Visual Studio Code settings are available for the Styled-Colors extension. These can be set in user preferences `(cmd+,)` or workspace settings `(.vscode/settings.json)`.
 
-- Generate colored background for
-  - css variables
-  - preprocessor variables
-  - hsl/hsla colors
-  - cross browsers colors (_red, blue, green..._)
-  - css hexa color
-  - rgb/rgba color
-  - argb color
-- Color background live update
-
-## Options (settings)
-
-The following Visual Studio Code settings are available for the Colorize extension.
-These can be set in user preferences `(cmd+,)` or workspace settings `(.vscode/settings.json)`.
-
-### colorize.languages _ARRAY_
+### 🗣 &nbsp; styled-colors.languages _ARRAY_
 
 Configure a list of languages that should be colorized. You can learn about languages at <https://code.visualstudio.com/docs/languages/overview>.
 
-For example, if you want to colorize colors in `javascript` files, you just need to include it:
+For example, if you want to styled-colors colors in `python` files, you just need to include it:
 
 ```json
-  "colorize.languages": [
-    "javascript",
+  "styled-colors.languages": [
+    "python",
     // ...
   ]
 ```
 
-### colorize.enable_search_variables _BOOLEAN_ _default: true
+### 🔍 &nbsp; styled-colors.enable_search_variables _BOOLEAN_ _default: true_
 
-By default colorize read and parse all files, in your workspace, that are targeted by the settings [colorize.languages](#colorizelanguages), [colorize.include](#colorizeinclude), and [colorize.exlude](#colorizeexclude) to extract extract all variables. Thanks to this behavior all variables will have colored background even if you never open the file containing the declaration. _⚠️ This setting can slown down vscode at opening_
+By default, Styled-Colors read and parse all files in your workspace that are targeted by the settings styled-colors.languages, styled-colors.include, and styled-colors.exclude to extract all variables. Thanks to this behavior, all variables will have colored background even if you never open the file containing the declaration. _⚠️ This setting can slow down VS Code at opening_
 
-### colorize.include
+### 📚 &nbsp; colorize.include
 
-Configure glob patterns for including files and folders. By default Colorize is enable for files matching one the languages defined in the `colorize.languages` config, with this config you can enable colorize for other files or folders. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
+Configure glob patterns for including files and folders. By default, Styled-Colors is enabled for files matching one of the languages defined in the styled-colors.languages config. With this config, you can enable Styled-Colors for other files or folders. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
 
-### colorize.exclude
+### ❌ &nbsp; styled-colors.exclude
 
-Configure glob patterns for excluding files and folders. Colorize will not colorized colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
+Configure glob patterns for excluding files and folders. Styled-Colors will not colorize colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
 
-### colorize.hide_current_line_decorations _BOOLEAN_ _default: true_
+### 👀 &nbsp; styled-colors.hide_current_line_decorations _BOOLEAN_ _default: true_
 
 By default, decorations for the current line are hidden. Set this setting to `false` if you want to deactivate this behavior.
 
-### colorize.colorized_colors _ARRAY_
+### 🎨 &nbsp; styled-colors.colorized_colors _ARRAY_
 
 This options allow you to enable/disable colorization for a type of colors.
 
 Available colors are :
 
-- `HEXA`: for hexadecimal colors: `#RGB`, `#RGBA`, `#RRGGBB`, `#RRGGBBAA`, `0xRGB`, `0xRGBA`, `0xRRGGBB` or `0xRRGGBBAA`
-- `ARGB`: for argb colors: `#RGB`, `#ARGB`, `#RRGGBB` or `#AARRGGBB`
-- `RGB`: for rgb colors: `rgb(r,g,b)` or `rgba(r,g,b,a)`
-- `HSL`: for HSL colors: `hsl(h,s,l)` or `hsla(h,s,l,a)`
-- `BROWSERS_COLORS`: for native browser's colors like `white`, `red`, `blue`...
+- 💎 &nbsp; `HEXA`: for hexadecimal colors: `#RGB`, `#RGBA`, `#RRGGBB`, `#RRGGBBAA`, `0xRGB`, `0xRGBA`, `0xRRGGBB` or `0xRRGGBBAA`
+- 🎨 &nbsp; `ARGB`: for argb colors: `#RGB`, `#ARGB`, `#RRGGBB` or `#AARRGGBB`
+- 🔴 &nbsp; `RGB`: for rgb colors: `rgb(r,g,b)` or `rgba(r,g,b,a)`
+- 🌈 &nbsp; `HSL`: for HSL colors: `hsl(h,s,l)` or `hsla(h,s,l,a)`
+- 🌐 &nbsp; `BROWSERS_COLORS`: for native browser's colors like `white`, `red`, `blue`...
 
-For example, if you want to only colorize hexa colors (`#fff, #ffffff, 0xFFF`) in your files you can update the option like this :
+
+For example, if you want to only styled-colors hexa colors (`#fff, #ffffff, 0xFFF`) in your files you can update the option like this :
 
 ```json
-  "colorize.colorized_colors": [
+  "styled-colors.colorized_colors": [
     "HEXA"
   ]
 ```
 
-### colorize.colorized_variables
+### 🎨 &nbsp; styled-colors.colorized_variables
 
 This options allow you to enable/disable colorization for a type of variables.
 
 For example if you use less in your project you setup the option like this
 
 ```json
-  "colorize.colorized_variables": [
+  "styled-colors.colorized_variables": [
     "LESS"
   ]
 ```
 
 _This way all @variables will be colorized_
 
-## Roadmap
 
-- [x] Generate background for hexa colors
-- [x] Update background on color updates
-- [x] Generate background for rgb colors
-- [x] Generate background for rgba colors
-- [x] Generate background for hsl colors
-- [x] Generate background for hsla colors
-- [x] Generate background for Predefined/Cross-browser colors
-- [x] Generate background for preprocessor variables
-- [x] Generate background for css variables
-- [x] Config livereload
+## 🤝💰 Sponsors
 
-## Release
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/nyxb/static/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/nyxb/static/sponsors.png'/>
+  </a>
+</p>
 
-See [CHANGELOG](CHANGELOG.md) for more information.
+## 📜 License
 
-## Contributing
-
-Bugs, feature requests and more are welcome here [GitHub Issues](https://github.com/KamiKillertO/vscode-colorize/issues).
+[MIT](./LICENSE) 💚 License © 2023 [Dennis Ollhoff](https://github.com/nyxb)

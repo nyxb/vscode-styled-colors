@@ -1,10 +1,14 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-  "files.exclude": {
-    "out": false // set this to true to hide the "out" folder with the compiled JS files
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.tabSize": 3,
+  "editor.insertSpaces": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
-  "search.exclude": {
-    "out": true // set this to false to include "out" folder in search results
-  },
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "files.insertFinalNewline": true,
+  "editor.trimAutoWhitespace": true,
+  "files.encoding": "utf8",
+  "eslint.format.enable": true
 }
