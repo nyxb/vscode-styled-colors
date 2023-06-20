@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/nyxb/vscode-styled-colors/compare/v0.0.1...v0.0.2)
+
+
+### 🎨 Styles
+
+  - **package.json:** Change galleryBanner theme from dark to light to improve visibility and accessibility ([f492891](https://github.com/nyxb/vscode-styled-colors/commit/f492891))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.0.1
 
 
