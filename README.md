@@ -1,7 +1,7 @@
 # 💅 &nbsp; Styled-Colors
 
 <p align="center">
-<a href="https://marketplace.visualstudio.com/items?itemName=nyxb.styled-colors" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/nyxb.styled-colors.svg?style=flat&colorA=18181B&colorB=14F195&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=nyxb.vscode-styled-colors" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/nyxb.vscode-styled-colors.svg?style=flat&colorA=18181B&colorB=14F195&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 </p>
 
 > Effortlessly visualize CSS colors in your JavaScript, TypeScript, and other source files. This extension is designed to work excellently with styled-components, dynamically generating a colored underline for your color specifications. The underline can be customized to appear as a background color through settings.
