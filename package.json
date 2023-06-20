@@ -3,7 +3,7 @@
   "name": "vscode-styled-colors",
   "displayName": "styled-colors",
   "version": "0.0.4",
-  "description": "A vscode extension to help visualize css colors in files.",
+  "description": "💅 Visualizes CSS colors in your JavaScript and TypeScript files. Optimized for 💅 styled-components, it supports modern CSS syntax.",
   "license": "MIT",
   "homepage": "https://github.com/nyxb/vscode-styled-colors/blob/master/README.MD",
   "repository": {
